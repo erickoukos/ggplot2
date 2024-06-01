@@ -101,6 +101,14 @@ ggplot(penguins, aes(x = fct_infreq(species))) +
 
 
 ggplot(penguins, aes(x = species)) + 
-  geom_bar(stat = "count", aes(label = ..count..), vjust = 0.5, size = 5) +
-  geom_text(label = "value"), vjust = 0.5, size = 5) +
+  geom_bar(fill = "skyblue") +
+  geom_text(stat = "count", aes(label = ..count..), vjust = -0.3, size = 5) +
   theme_minimal()
+
+
+ggplot(penguins, aes(x = species, y = body_mass_g)) + 
+  geom_boxplot()
+
+
+ggplot(penguins, aes(x  = body_mass_g, colour = species, fill = species)) +
+  geom_density(linewidth = 0.75, alpha = 0.2)
